@@ -24,7 +24,6 @@ public class RegraRodizio extends RegraMulta {
                 nivel
             );
         }
-        // Caso não haja infração, retorna null
         return null;
     }
 
