@@ -107,10 +107,10 @@ public class BaseDeDados {
             }
         } catch (IOException e) {
             // Caso ocorra um erro ao ler o arquivo
-            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+            System.err.println("Erro na leitura do arquivo: " + e.getMessage());
         } catch (NumberFormatException e) {
             // Caso ocorra um erro ao converter o tipo de ocorrência
-            System.err.println("Erro ao converter tipo de ocorrência: " + e.getMessage());
+            System.err.println("Erro ao converter o tipo de ocorrência: " + e.getMessage());
         }
     }
 
