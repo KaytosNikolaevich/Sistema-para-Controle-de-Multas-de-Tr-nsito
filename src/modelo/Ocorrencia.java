@@ -4,7 +4,7 @@ public class Ocorrencia {
     private String placa; // Placa do veículo
     private String logradouro; // Local onde ocorreu a infração
     private String dataHora; // Data e hora da ocorrência (formato "yyyy-MM-dd HH:mm:ss")
-    private int tipoOcorrencia; // Detalhes adicionais, como velocidade ou hora
+    private int tipoOcorrencia; // Detalhes adicionais, velocidade ou hora
 
     public Ocorrencia(String placa, String logradouro, String dataHora, int tipoOcorrencia) {
         this.placa = placa;

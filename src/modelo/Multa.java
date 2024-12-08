@@ -12,7 +12,7 @@ public class Multa {
         this.logradouro = logradouro;
         this.descricao = descricao;
         this.nivelMulta = nivelMulta;
-        this.valorMulta = calcularValorMulta(nivelMulta); // Calcula o valor baseado no nível
+        this.valorMulta = calcularValorMulta(nivelMulta);
     }
 
     // Calcula o valor da multa de acordo com o nível
