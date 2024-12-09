@@ -1,8 +1,9 @@
 Validar o Branche Master, onde está todo o projeto.
 
 Integrantes:
-Kevin Dias
+Kevin Dias Pereira - kevinkkdp@gmail.com - BEC
 
-Bacharelado em Engenharia da computação.
+Tiago josé batschke de souza - tiagojo1234@gmail.com - BEC
 
-Nota: Fiz sozinho, não localizei um grupo
+No src temos duas mains, a main é a principal, sendo ela com inteface, já a main2 é uma sem interface, com maiores opções.
+
