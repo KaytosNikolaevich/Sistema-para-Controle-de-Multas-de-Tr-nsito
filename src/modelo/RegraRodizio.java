@@ -46,4 +46,17 @@ public class RegraRodizio extends RegraMulta {
                String.join(", ", logradouros) +
                ". Dia do rodízio: " + diaSemana + ".";
     }
+
+    public boolean verificarRegra(Ocorrencia ocorrencia) {
+        return calcularMulta(ocorrencia) != null;
+    }
+
+    public void aplicarMulta(Ocorrencia ocorrencia) {
+        Multa multa = calcularMulta(ocorrencia);
+        if (multa != null) {
+            System.out.println("Multa aplicada: " + multa.getDescricao() + " - R$ " + multa.getValorMulta());
+        } else {
+            System.out.println("Nenhuma multa aplicada.");
+        }
+    }
 }
