@@ -90,30 +90,38 @@ public class BaseDeDados {
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
             while ((linha = br.readLine()) != null) {
-                // Divide cada linha do arquivo em campos separados por vírgula
-                String[] dados = linha.split(",");
+                // Divide cada linha do arquivo em campos separados por ponto e vírgula
+                String[] dados = linha.split(";"); // Alterado para ";"
                 if (dados.length == 4) {
                     // Cria uma nova ocorrência a partir dos dados da linha
                     String placa = dados[0].trim();
                     String logradouro = dados[1].trim();
                     String dataHora = dados[2].trim();
                     int tipoOcorrencia = Integer.parseInt(dados[3].trim());
+
+                    if (!validarPlaca(placa)) {
+                        System.err.println("Placa inválida no arquivo: " + placa);
+                        continue; // Ignorar esta linha e passar para a próxima
+                    }
+
+                    if (!validarDataHora(dataHora)) {
+                        System.err.println("Data e hora inválidas no arquivo: " + dataHora);
+                        continue; // Ignorar esta linha e passar para a próxima
+                    }
+
                     Ocorrencia ocorrencia = new Ocorrencia(placa, logradouro, dataHora, tipoOcorrencia);
-                    adicionarOcorrencia(ocorrencia); // Adiciona a ocorrência à lista
+                    adicionarOcorrencia(ocorrencia);
                 } else {
-                    // Caso a linha não tenha o formato esperado, imprime um erro
+                    // Caso a linha não tenha o formato esperado
                     System.err.println("Linha inválida no arquivo: " + linha);
                 }
             }
         } catch (IOException e) {
-            // Caso ocorra um erro ao ler o arquivo
-            System.err.println("Erro na leitura do arquivo: " + e.getMessage());
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         } catch (NumberFormatException e) {
-            // Caso ocorra um erro ao converter o tipo de ocorrência
             System.err.println("Erro ao converter o tipo de ocorrência: " + e.getMessage());
         }
     }
-
     // Retorna a lista de regras de multa
     public List<RegraMulta> getRegrasMulta() {
         return regrasMulta;
