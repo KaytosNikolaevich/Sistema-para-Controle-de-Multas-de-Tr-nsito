@@ -80,6 +80,20 @@ As multas são calculadas com base nas regras configuradas no sistema, como velo
 Processamento de Ocorrências:
 - O sistema verifica cada ocorrência e aplica a multa correspondente, dependendo da infração detectada com base nas regras.
 
+# Destaque:
+Possuimos duas mains para rodarem separadamente:
 
+- Main: Um código que apresenta uma interface para aplicação das multas.
+- Main2: Um código mais completo, que permite escolher uma opção de 1 a 8, sendo elas:
+1. Importar ocorrências de arquivo
+2. Cadastrar nova ocorrência
+3. Processar ocorrências
+4. Listar ocorrências não processadas
+5. Listar multas geradas
+6. Buscar multas por data
+7. Buscar multas por placa
+8. Cadastrar nova regra de multa
+9. Exportar multas
+0. Sair
 
-
+- Nesta Main2, após importar ocorrência de arquivo ou cadastrar uma ocorrência, selecionar a opção 3 para processar a mesma, assim poderá localizar ela nas consultas.
